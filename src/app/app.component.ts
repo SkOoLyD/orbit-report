@@ -18,8 +18,10 @@ export class AppComponent {
       response.json().then(function(data) {
 
         let fetchedSatellites = data.satellites;
-        for let
-      }
-    }
- } 
-}
+        for (let i = 0; i< data.satellites.length; i++) {
+          let satellite = new Satellite (fetchedSatellites[i].name, fetchedSatellites[i].type,
+            fetchedSatellites[i].launchDate, fetchedSatellites[i].orbitType, fetchedSatellites[i].operational);
+            this.sourceList.push(satellite);
+        }
+  }.bind(this));
+}.bind(this))}};
